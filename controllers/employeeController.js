@@ -43,7 +43,7 @@ class EmployeeController {
           updatedAt: date,
         });
 
-        Utils.sendOTPEmail(otp, "anggiferdiyani@gmail.com");
+        Utils.sendOTPEmail(otp, email);
 
         res.status(200).send({ message: "OTP generated!" });
       } else {

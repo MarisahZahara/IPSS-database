@@ -20,8 +20,6 @@ class Utils {
   };
   static sendOTPEmail = async (OTP, receiver) => {
     try {
-      let testAccount = await nodemailer.createTestAccount();
-
       let transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -31,15 +29,11 @@ class Utils {
       });
 
       let info = await transporter.sendMail({
-        from: "OTP Verification", // sender address
+        from: "OTP Verification <noreply.journeybuilder@gmail.com>", // sender address
         to: receiver, // list of receivers
         subject: "OTP ✔", // Subject line
-        text: `Hello world? OTP: ${OTP}`, // plain text body
+        text: `OTP: ${OTP}`, // plain text body
       });
-
-      console.log("Message sent: %s", info.messageId);
-
-      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
     } catch (error) {
       console.log("error nodemailer", error);
     }

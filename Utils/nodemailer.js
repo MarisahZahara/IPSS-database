@@ -4,7 +4,7 @@ const env = require("dotenv");
 
 env.config();
 
-async function main() {
+async function main({ to, subject, text }) {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -15,16 +15,15 @@ async function main() {
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: '"Marisa" <foo@example.com>', // sender address
-    to: "julluisw@gmail.com, anggiferdiyani@gmail.com", // list of receivers
-    subject: "Hello ✔", // Subject line
-    text: "Hello world?", // plain text body
-    html: "<b>Hello world hahaha?</b>", // html body
+    from: "<noreply.journeybuilder@gmail.com>",
+    to: to,
+    subject: subject,
+    text: text,
   });
 
-  console.log("Message sent: %s", info.messageId);
+  // console.log("Message sent: %s", info.messageId);
 
-  console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+  // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 }
 
 module.exports = main;
