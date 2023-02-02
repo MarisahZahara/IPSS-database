@@ -33,9 +33,7 @@ class ProjectController {
   static async readById(req, res, next) {
     try {
       const { params } = req;
-      const response = await Projects.findByPk({
-        where: { id: params.id },
-      });
+      const response = await Projects.findByPk(+params.id);
       res.status(200).send(response);
     } catch (error) {
       console.log(error);
