@@ -211,6 +211,7 @@ class EmployeeController {
       });
       res.sendStatus(200).send({ message: "Berhasil delete!" });
     } catch (error) {
+      console.log(error);
       next(error);
     }
   }
