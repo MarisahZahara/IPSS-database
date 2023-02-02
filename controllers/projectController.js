@@ -83,7 +83,7 @@ class ProjectController {
       const response = await Projects.destroy({
         where: { id: +params.id },
       });
-      res.status(200).send(response);
+      res.sendStatus(200).send(response);
     } catch (error) {
       console.log(error);
       next(error);
