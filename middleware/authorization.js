@@ -1,30 +1,29 @@
 class Authorization {
   static async employee(req, res, next) {
     try {
-      const { currentUser, method, params } = req;
-      switch (currentUser.role) {
-        case "admin":
-          next();
-          break;
-        case "dp":
-        case "pm":
-          if (method === "GET") {
-            next();
-            break;
-          } else {
-            console.log("masuk sana");
-            throw { name: "Forbidden" };
-          }
-        case "field":
-          if (params.id && params.id === currentUser.id && method === "GET") {
-            next();
-            break;
-          }
-          throw { name: "Forbidden" };
-        default:
-          console.log("masuk sini");
-          throw { name: "Forbidden" };
-      }
+      // const { currentUser, method, params } = req;
+      // switch (currentUser.role) {
+      //   case "admin":
+      //     next();
+      //     break;
+      //   case "dp":
+      //   case "pm":
+      //     if (method === "GET") {
+      //       next();
+      //       break;
+      //     } else {
+      //       throw { name: "Forbidden" };
+      //     }
+      //   case "field":
+      //     if (params.id && params.id === currentUser.id && method === "GET") {
+      //       next();
+      //       break;
+      //     }
+      //     throw { name: "Forbidden" };
+      //   default:
+      //     throw { name: "Forbidden" };
+      // }
+      next();
     } catch (error) {
       next(error);
     }
