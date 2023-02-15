@@ -1,7 +1,7 @@
 const errorHandler = (err, req, res, next) => {
   switch (err.name) {
     case "JsonWebTokenError":
-      res.status(401).json({ message: "Invalid token" });
+      res.status(401).json({ err });
       break;
     case "TokenExpiredError":
       res.status(401).json({ message: "Token Expired" });
