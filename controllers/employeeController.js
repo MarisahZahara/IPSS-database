@@ -4,7 +4,6 @@ const Utils = require("../Utils");
 class EmployeeController {
   static async login(req, res, next) {
     try {
-      console.log("pre-login");
       const { email, password } = req.body;
       if (!email) {
         throw { name: "EmptyEmail" };
