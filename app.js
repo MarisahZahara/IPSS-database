@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 app.post("/user/login", EmployeeController.login);
 app.post("/user/login/verify", EmployeeController.verifyOtp);
 
-// app.use(authentication);
+app.use(authentication);
 
 //User Management
 app.post("/user/register", EmployeeController.register);
