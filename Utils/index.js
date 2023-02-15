@@ -16,7 +16,7 @@ class Utils {
     });
   };
   static verifyToken = (token) => {
-    console.log("sini", jwt);
+    console.log("token nya nih", token);
     return jwt.verify(token, process.env.SECRET_KEY);
   };
   static sendOTPEmail = async (OTP, receiver) => {

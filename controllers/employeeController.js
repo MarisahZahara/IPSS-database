@@ -4,6 +4,7 @@ const Utils = require("../Utils");
 class EmployeeController {
   static async login(req, res, next) {
     try {
+      console.log("pre-login");
       const { email, password } = req.body;
       if (!email) {
         throw { name: "EmptyEmail" };
@@ -53,6 +54,7 @@ class EmployeeController {
           email: currentUser.email,
           role: currentUser.role.user_role,
         };
+        console.log("masuk sini");
 
         res.status(200).send({ token: Utils.createToken(payload) });
       }
