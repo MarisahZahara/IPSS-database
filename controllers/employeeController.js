@@ -11,11 +11,15 @@ class EmployeeController {
       if (!password) {
         throw { name: "EmptyPassword" };
       }
+      console.log("1");
 
       const currentUser = await Employees.findOne({
         where: { email },
         include: { model: Roles, as: "role" },
       });
+
+      console.log("2");
+
       if (!currentUser) {
         throw { name: "LoginError" };
       }
