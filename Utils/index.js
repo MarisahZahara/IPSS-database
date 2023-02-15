@@ -11,7 +11,7 @@ class Utils {
     return bcrypt.compareSync(password, hash);
   };
   static createToken = (payload) => {
-    return jwt.sign(payload, process.env.SECRET_KEY, {
+    return jwt.sign(payload.toString(), process.env.SECRET_KEY, {
       //   expiresIn: "600s",
     });
   };
