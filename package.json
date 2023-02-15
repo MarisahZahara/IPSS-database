@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js && npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all",
-    "dev": "npx sequelize db:migrate:undo:all && npx sequelize db:migrate && npx sequelize db:seed:all"
+    "start": "node app.js",
+    "dev": "node app.js"
   },
   "repository": "https://gitlab.com/anggiferdiyani/jeruk-mandarin-be.git",
   "license": "MIT",
