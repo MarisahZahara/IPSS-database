@@ -11,11 +11,12 @@ class Utils {
     return bcrypt.compareSync(password, hash);
   };
   static createToken = (payload) => {
-    return jwt.sign({ id: 100 }, process.env.SECRET_KEY, {
+    return jwt.sign(payload, process.env.SECRET_KEY, {
       //   expiresIn: "600s",
     });
   };
   static verifyToken = (token) => {
+    console.log("sini", jwt);
     return jwt.verify(token, process.env.SECRET_KEY);
   };
   static sendOTPEmail = async (OTP, receiver) => {
