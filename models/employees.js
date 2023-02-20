@@ -66,6 +66,7 @@ module.exports = (sequelize, DataTypes) => {
       gender: {
         type: DataTypes.STRING,
       },
+
       isVerified: {
         type: DataTypes.BOOLEAN,
         defaultValue: false,

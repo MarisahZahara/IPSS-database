@@ -37,6 +37,9 @@ module.exports = (sequelize, DataTypes) => {
       id_pmt: DataTypes.INTEGER,
       id_dp: DataTypes.INTEGER,
       id_field: DataTypes.INTEGER,
+      status_achievement: {
+        type: DataTypes.STRING,
+      },
     },
     {
       sequelize,
